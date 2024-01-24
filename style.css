@@ -1,0 +1,144 @@
+.grid {
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1em;
+    grid-template-areas: "header header header"
+                         "sidebar-1 article sidebar-2"
+                         "footer footer footer";
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color:aliceblue;
+    text-align: center;
+    font-weight:bold;
+  }
+  
+  header,
+  aside,
+  article,
+  footer {
+    padding: 1em;
+  }
+
+  header {
+    background-color: bisque;
+    grid-area: header; }
+
+  img{
+    width: 400px;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  footer {
+    grid-area: footer;
+    background-color: aquamarine;
+  }
+  
+  .sidebar-left {
+    grid-area: sidebar-1;
+    background-color: palevioletred;
+      
+  }
+  
+  .sidebar-right {
+    grid-area: sidebar-2;
+    background-color: lightcoral;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    height: 100px;
+    transform-style: preserve-3d; /* Enable 3D transformations */
+}
+.item:hover {
+    animation: rotateAndChangeColor 2s forwards;
+}
+
+@keyframes rotateAndChangeColor {
+    0% {
+        background-color: skyblue;
+        transform: scale3d(x,y,z);
+    }
+    50% {
+        background-color: yellowgreen;
+        transform: rotateY(180deg);
+    }
+    100% {
+        background-color: skyblue;
+        transform: rotateY(360deg);
+    }
+}
+.main{
+    background-color:orange;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+}
+
+#hi{display: none;}
+#two{
+    display:none;
+}
+
+.wrapper:hover #one{
+    display:none;}
+
+.wrapper:hover #two{
+        display:block;
+        align-items: center;}
+
+header:hover #hi{
+    animation: ChangeColor 1.5s ease-in-out;
+    display:block;
+    color:blue;
+}
+
+
+@keyframes ChangeColor {
+    0% {
+        background-color: bisque;
+        
+    }
+    50% {
+        background-color: lightcyan;
+        
+    }
+    100% {
+        background-color: bisque;
+        
+    }
+}
+  /* Style elements that are checked */
+  input:checked {
+    accent-color: red;
+  }
+  .animation {
+    color:white;
+    font-size:20px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    padding:10px;
+    background-color: red; /* Red background to start*/
+    animation: example 5s ease-in-out infinite;
+    animation-direction: alternate;
+     }
+     @keyframes example {
+        from {background-color:pink;
+          transform: rotate(0deg) scale(1);
+          filter: blur(0px);
+        
+        }
+        to {background-color: yellow;
+          transform: rotate(360deg) scale(2);
+          filter: blur(20px);
+          }
+      }
+
